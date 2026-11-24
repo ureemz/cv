@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ========== تهيئة محركات البحث والمشاركة ========== -->
+  <title>ريم محمد عبدالله الناخبي | سيرة ذاتية — طالبة أمن سيبراني</title>
+  <meta name="description" content="سيرة ذاتية لريم محمد عبدالله الناخبي، طالبة بكالوريوس الأمن السيبراني من جدة: مهارات في أساسيات الأمن السيبراني وJava وقواعد البيانات وتطوير الويب.">
+  <meta name="theme-color" content="#0B1623">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ريم محمد عبدالله الناخبي | سيرة ذاتية — طالبة أمن سيبراني">
+  <meta property="og:description" content="طالبة بكالوريوس الأمن السيبراني من جدة، شغوفة بحماية الأنظمة وبناء تطبيقات ويب آمنة.">
+  <meta property="og:locale" content="ar_SA">
+
+  <!-- الخطوط الوحيدة المسموح بها خارجياً: Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== 1) المتغيرات العامة: لونان أساسيان + لون مميز واحد ========== */
+    :root {
+      --ink: #0B1623;          /* اللون الأساسي الداكن (حبر) */
+      --ink-soft: #14263A;     /* تدرّج منه */
+      --paper: #F3F6F7;        /* اللون الأساسي الفاتح (ورق) */
+      --surface: #FFFFFF;      /* تدرّج منه */
+      --accent: #10B7A5;       /* اللون المميز: أخضر مائي تقني */
+      --accent-dark: #0A7C70;  /* تدرّج منه لتباين أفضل على الفاتح */
+      --text: #1A2B3C;
+      --muted: #5C6E7E;
+      --line: #DDE6E9;
+      --radius: 18px;
+      --shadow: 0 12px 34px rgba(11, 22, 35, .07);
+      --max: 1080px;
+    }
+
+    /* ========== 2) إعادة ضبط وتأسيس ========== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+      line-height: 1.28;
+      color: var(--ink);
+    }
+    p { margin: 0; }
+    a { color: inherit; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    .container { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+
+    /* رابط تخطي المحتوى لقارئات الشاشة ولوحة المفاتيح */
+    .skip-link {
+      position: fixed; top: 12px; right: 12px; z-index: 100;
+      background: var(--accent); color: #04231F;
+      padding: 10px 16px; border-radius: 10px; font-weight: 700;
+      transform: translateY(-180%); transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: none; }
+
+    /* مخزون الأيقونات الداخلي (لا صور خارجية) */
+    .svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .icon {
+      width: 20px; height: 20px; flex: none;
+      fill: none; stroke: currentColor; stroke-width: 1.8;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .icon--fill { fill: currentColor; stroke: none; }
+
+    /* ========== 3) الرأس ========== */
+    .hero {
+      position: relative; overflow: hidden;
+      padding-block: 72px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(16, 183, 165, .18), transparent 46%),
+        linear-gradient(135deg, var(--ink), var(--ink-soft));
+    }
+    /* شبكة تقنية خفيفة بـ CSS فقط */
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+      mask-image: linear-gradient(to bottom, #000, transparent);
+    }
+    .hero__inner {
+      position: relative;
+      display: grid; grid-template-columns: 1.4fr .6fr;
+      align-items: center; gap: 40px;
+    }
+    .hero__kicker {
+      display: inline-block; margin-bottom: 18px;
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+      color: var(--accent);
+      border: 1px solid rgba(16,183,165,.4);
+      background: rgba(16,183,165,.08);
+      padding: 4px 14px; border-radius: 999px;
+    }
+    .hero h1 { color: #fff; font-size: clamp(2rem, 4.6vw, 3.15rem); font-weight: 800; }
+    .hero__role { margin-top: 10px; font-size: clamp(1rem, 2vw, 1.2rem); color: #D7E3E9; }
+    .hero__role span { color: var(--accent); }
+    .hero__meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 14px; color: #A9BCC8; font-size: .95rem;
+    }
+    .hero__meta .icon { width: 17px; height: 17px; color: var(--accent); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 44px; padding: 10px 18px;
+      border: 1px solid transparent; border-radius: 12px;
+      font-size: .92rem; font-weight: 600; white-space: nowrap; cursor: pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn .icon { width: 18px; height: 18px; }
+    .btn--accent { background: var(--accent); color: #04231F; }
+    .btn--accent:hover { background: #2ACBB8; }
+    .btn--ghost { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); color: #fff; }
+    .btn--ghost:hover { background: rgba(255,255,255,.12); }
+
+    /* شعار درع مرسوم بـ SVG داخلي — زينة فقط */
+    .hero__emblem {
+      justify-self: center; display: grid; place-items: center;
+      width: min(260px, 100%); aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle, rgba(16,183,165,.14), transparent 68%);
+      animation: float 7s ease-in-out infinite;
+    }
+    .hero__emblem svg { width: 100%; height: 100%; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* ========== 4) الأقسام والعناوين ========== */
+    .section { padding-block: 64px; }
+    .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .section-head::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .section-head__kicker {
+      font-size: .78rem; font-weight: 700; white-space: nowrap;
+      color: var(--accent-dark); background: rgba(16,183,165,.1);
+      padding: 5px 12px; border-radius: 8px;
+    }
+    .section-head h2 { font-size: clamp(1.4rem, 2.6vw, 1.85rem); }
+
+    /* نبذة */
+    .about-card {
+      max-width: 880px; padding: 28px 30px;
+      background: var(--surface); border: 1px solid var(--line);
+      border-inline-start: 4px solid var(--accent);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .about-card p { font-size: 1.05rem; }
+
+    /* بطاقات المهارات والمشاريع */
+    .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+    .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16,183,165,.5);
+      box-shadow: 0 18px 40px rgba(11,22,35,.1);
+    }
+    .card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .94rem; }
+    .skill__icon, .edu-item__icon, .contact-row__icon {
+      display: grid; place-items: center; flex: none;
+      width: 44px; height: 44px; border-radius: 12px;
+      color: var(--accent-dark); background: rgba(16,183,165,.1);
+    }
+    .skill__icon { margin-bottom: 16px; }
+    .skill__icon .icon, .edu-item__icon .icon, .contact-row__icon .icon { width: 22px; height: 22px; }
+
+    /* التعليم */
+    .edu-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .edu-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 22px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 14px;
+    }
+    .edu-item h3 { font-size: 1.02rem; }
+
+    /* المشاريع */
+    .project { display: flex; flex-direction: column; height: 100%; }
+    .project__num {
+      margin-bottom: 14px; font-family: 'Tajawal', sans-serif;
+      font-size: .85rem; font-weight: 700; letter-spacing: .08em;
+      color: var(--accent-dark);
+    }
+    .project__tags {
+      display: flex; flex-wrap: wrap; gap: 7px;
+      margin-top: auto; padding-top: 18px;
+    }
+    .tag {
+      font-size: .75rem; color: var(--accent-dark);
+      background: rgba(16,183,165,.09); border: 1px solid rgba(16,183,165,.18);
+      padding: 3px 10px; border-radius: 999px;
+      direction: ltr; unicode-bidi: isolate;
+    }
+
+    /* التواصل */
+    .contact-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      padding: 28px; color: #fff; border-radius: 22px;
+      background: linear-gradient(135deg, var(--ink), var(--ink-soft));
+    }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-row__icon { width: 40px; height: 40px; background: rgba(16,183,165,.14); color: var(--accent); }
+    .contact-row__label { display: block; color: #9FB4C1; font-size: .82rem; }
+    .contact-row__value { display: block; color: #fff; font-size: 1.05rem; font-weight: 600; }
+    .contact-card__actions {
+      grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px;
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    /* ========== 5) التذييل وإشعار النسخ ========== */
+    .site-footer { padding-block: 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    .site-footer .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .back-to-top { color: var(--accent-dark); text-decoration: none; font-weight: 700; }
+    .toast {
+      position: fixed; inset-inline-start: 50%; bottom: 24px; z-index: 50;
+      transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+      padding: 12px 20px; border-radius: 12px;
+      color: #fff; background: var(--ink); box-shadow: 0 14px 34px rgba(11,22,35,.24);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .toast.is-show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* ========== 6) حركات الظهور عند التمرير ========== */
+    [data-reveal] {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .65s ease var(--d, 0s), transform .65s ease var(--d, 0s);
+    }
+    [data-reveal].is-visible { opacity: 1; transform: none; }
+    .skills-grid [data-reveal]:nth-child(2), .projects-grid [data-reveal]:nth-child(2) { --d: .08s; }
+    .skills-grid [data-reveal]:nth-child(3), .projects-grid [data-reveal]:nth-child(3) { --d: .16s; }
+    .skills-grid [data-reveal]:nth-child(4) { --d: .24s; }
+
+    /* ========== 7) التجاوب مع الشاشات ========== */
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; }
+      .hero__emblem { display: none; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .hero { padding-block: 52px 44px; }
+      .hero__actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .section { padding-block: 44px; }
+      .skills-grid, .projects-grid, .edu-list, .contact-card { grid-template-columns: 1fr; }
+      .about-card { padding: 22px; }
+      .section-head { gap: 10px; }
+    }
+
+    /* ========== 8) احترام تفضيل تقليل الحركة ========== */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ========== 9) الطباعة: صفحة A4 نظيفة بدون عناصر زائدة ========== */
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      html, body { background: #fff !important; color: #000 !important; }
+      body { font-size: 9.5pt; line-height: 1.5; }
+      .no-print, .skip-link, .hero__emblem, .site-footer, .toast { display: none !important; }
+      .container { width: 100% !important; max-width: none !important; }
+
+      .hero { padding: 0 0 8mm !important; background: #fff !important; color: #000 !important; }
+      .hero::before { display: none !important; }
+      .hero h1 { color: #000 !important; font-size: 20pt; }
+      .hero__role { color: #222 !important; font-size: 11pt; }
+      .hero__meta, .hero__kicker { color: #333 !important; }
+      .hero__kicker { border-color: #bbb !important; background: none !important; }
+      .hero__meta .icon { color: #000 !important; }
+
+      .section { padding: 0 !important; margin: 0 0 7mm !important; break-inside: avoid-page; }
+      .section-head { margin-bottom: 3mm !important; }
+      .section-head h2 { font-size: 12pt; color: #000 !important; }
+      .section-head__kicker { color: #000 !important; background: none !important; border: 1px solid #bbb; }
+      .section-head::after { background: #ccc !important; }
+
+      .about-card, .card, .edu-item, .contact-card {
+        box-shadow: none !important; background: #fff !important; color: #000 !important;
+        border-color: #bbb !important; border-radius: 8px !important; padding: 10px 12px !important;
+      }
+      .grid, .edu-list, .contact-card { gap: 6px !important; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .projects-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .edu-list, .contact-card { grid-template-columns: repeat(2, 1fr) !important; }
+      .skill__icon, .edu-item__icon, .contact-row__icon {
+        width: 26px; height: 26px; margin-bottom: 6px;
+        background: none !important; color: #000 !important; border: 1px solid #bbb;
+      }
+      .skill__icon .icon, .edu-item__icon .icon, .contact-row__icon .icon { width: 14px; height: 14px; }
+      .card h3, .edu-item h3, .contact-row__value { color: #000 !important; font-size: 10pt; }
+      .card p, .about-card p, .contact-row__label { color: #333 !important; font-size: 9pt; }
+      .project__num { color: #000 !important; }
+      .tag { color: #000 !important; background: none !important; border-color: #bbb !important; font-size: 8pt; }
+      .contact-card__actions { border-color: #ccc !important; padding-top: 6px !important; }
+
+      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .about-card, .card, .edu-item { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+  <!-- إن عُطّل JavaScript تظهر كل العناصر مباشرة دون حركات -->
+  <noscript><style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <!-- مخزون الأيقونات: SVG داخلي، لا مكتبات ولا صور خارجية -->
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.11 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.24-.7.24-1.29.17-1.42-.08-.12-.28-.2-.58-.34M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.23-6.16-3.48-8.4Z"/></symbol>
+  </svg>
+
+  <!-- ========== الرأس: الاسم والمسمى وأزرار التواصل ========== -->
+  <header class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker" data-reveal>سيرة ذاتية</p>
+        <h1 data-reveal>ريم محمد عبدالله الناخبي</h1>
+        <p class="hero__role" data-reveal>طالبة بكالوريوس الأمن السيبراني <span dir="ltr">(Cybersecurity)</span></p>
+        <p class="hero__meta" data-reveal>
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+          جدة، المملكة العربية السعودية
+        </p>
+
+        <!-- الأزرار مخفية في الطباعة عبر no-print -->
+        <div class="hero__actions no-print" data-reveal>
+          <a class="btn btn--accent" href="https://wa.me/966542308267" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            تواصل عبر واتساب
+          </a>
+          <button class="btn btn--ghost" type="button" data-copy="0542308267" data-copy-label="نسخ رقم الجوال">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
+            <span class="btn__label">نسخ رقم الجوال</span>
+          </button>
+          <button class="btn btn--ghost js-print" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>
+            طباعة / حفظ PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- شعار زخرفي بالكامل داخل الصفحة -->
+      <div class="hero__emblem" aria-hidden="true">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="120" r="104" stroke="rgba(16,183,165,.25)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="84" stroke="rgba(255,255,255,.09)" stroke-width="1" stroke-dasharray="3 7"/>
+          <path d="M120 44 66 66v52c0 34 22 58 54 72 32-14 54-38 54-72V66l-54-22Z" fill="rgba(16,183,165,.08)" stroke="#10B7A5" stroke-width="2"/>
+          <path d="m96 118 16 16 34-36" stroke="#10B7A5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="16" r="3" fill="#10B7A5"/>
+          <circle cx="224" cy="120" r="3" fill="#10B7A5"/>
+          <circle cx="120" cy="224" r="3" fill="#10B7A5"/>
+          <circle cx="16" cy="120" r="3" fill="#10B7A5"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== نبذة ========== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-head__kicker">نبذة</span>
+          <h2 id="about-title">نبذة تعريفية</h2>
+        </div>
+        <div class="about-card" data-reveal>
+          <p>طالبة بكالوريوس في الأمن السيبراني، شغوفة بحماية الأنظمة والبيانات وبنية التطبيقات الآمنة. أجمع بين البرمجة الكائنية بلغة Java وأساسيات تطوير الويب بـ HTML5، مع خلفية في تصميم قواعد البيانات وSQL. أسعى لتوظيف هذه المهارات في بناء حلول رقمية آمنة وموثوقة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== المهارات ========== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-head__kicker">مهاراتي</span>
+          <h2 id="skills-title">المهارات التقنية</h2>
+        </div>
+        <ul class="grid skills-grid">
+          <li class="card skill" data-reveal>
+            <span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+            <h3>أساسيات الأمن السيبراني</h3>
+            <p>حماية الأنظمة والبيانات وبنية التطبيقات الآمنة</p>
+          </li>
+          <li class="card skill" data-reveal>
+            <span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></span>
+            <h3>Java والبرمجة الكائنية (OOP)</h3>
+            <p>لغة Java ومفاهيم البرمجة الكائنية</p>
+          </li>
+          <li class="card skill" data-reveal>
+            <span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-database"></use></svg></span>
+            <h3>إدارة قواعد البيانات وSQL</h3>
+            <p>التصميم والمعالجة والتحليل</p>
+          </li>
+          <li class="card skill" data-reveal>
+            <span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-layout"></use></svg></span>
+            <h3>HTML5 وأساسيات تطوير الويب</h3>
+            <p>تطوير صفحات الويب</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== التعليم ========== -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-head__kicker">مساري</span>
+          <h2 id="education-title">التعليم</h2>
+        </div>
+        <div class="edu-list">
+          <article class="edu-item" data-reveal>
+            <span class="edu-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-graduation"></use></svg></span>
+            <h3>بكالوريوس الأمن السيبراني</h3>
+          </article>
+          <article class="edu-item" data-reveal>
+            <span class="edu-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-database"></use></svg></span>
+            <h3>مادة/دورة متخصصة في إدارة قواعد البيانات</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== المشاريع ========== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-head__kicker">أعمال</span>
+          <h2 id="projects-title">المشاريع</h2>
+        </div>
+        <ul class="grid projects-grid">
+          <li class="card project" data-reveal>
+            <span class="project__num" dir="ltr">01</span>
+            <h3>تطبيق برمجي بلغة Java</h3>
+            <p>يوظف مفاهيم البرمجة الكائنية والأنظمة الآمنة</p>
+            <div class="project__tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Secure Systems</span></div>
+          </li>
+          <li class="card project" data-reveal>
+            <span class="project__num" dir="ltr">02</span>
+            <h3>قاعدة بيانات لمعالجة البيانات</h3>
+            <p>تصميم وبناء قاعدة بيانات قادرة على معالجة البيانات وتحليلها ضمن هيكل منظم</p>
+            <div class="project__tags"><span class="tag">SQL</span><span class="tag">Data Modeling</span><span class="tag">Analysis</span></div>
+          </li>
+          <li class="card project" data-reveal>
+            <span class="project__num" dir="ltr">03</span>
+            <h3>سيرة ذاتية تفاعلية</h3>
+            <p>صفحة تعرض المحتوى بتنظيم وسهولة تصفح</p>
+            <div class="project__tags"><span class="tag">HTML5</span><span class="tag">UI</span><span class="tag">Web</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== التواصل ========== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-head__kicker">تواصل معي</span>
+          <h2 id="contact-title">التواصل</h2>
+        </div>
+        <div class="contact-card" data-reveal>
+          <div class="contact-row">
+            <span class="contact-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+            <div>
+              <span class="contact-row__label">الجوال / واتساب</span>
+              <span class="contact-row__value"><bdi dir="ltr">0542308267</bdi> — <bdi dir="ltr">+966 54 230 8267</bdi></span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></span>
+            <div>
+              <span class="contact-row__label">المدينة</span>
+              <span class="contact-row__value">جدة، المملكة العربية السعودية</span>
+            </div>
+          </div>
+          <div class="contact-card__actions no-print">
+            <a class="btn btn--accent" href="https://wa.me/966542308267" target="_blank" rel="noopener noreferrer">
+              <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+              واتساب
+            </a>
+            <button class="btn btn--ghost" type="button" data-copy="0542308267" data-copy-label="نسخ الرقم">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
+              <span class="btn__label">نسخ الرقم</span>
+            </button>
+            <button class="btn btn--ghost js-print" type="button">
+              <svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>
+              طباعة / حفظ PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>ريم محمد عبدالله الناخبي — جدة، المملكة العربية السعودية</span>
+      <a class="back-to-top" href="#top">العودة إلى الأعلى <svg class="icon" aria-hidden="true" style="width:15px;height:15px;vertical-align:-2px"><use href="#i-arrow-up"></use></svg></a>
+    </div>
+  </footer>
+
+  <!-- إشعار وصولي لنتيجة نسخ الرقم -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* 1) حركات الظهور عند التمرير — تُعرض فوراً إذا فضّل المستخدم تقليل الحركة */
+      var reveals = document.querySelectorAll('[data-reveal]');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+      } else {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { observer.observe(el); });
+      }
+
+      /* 2) إشعار صغير بعد النسخ */
+      var toast = document.getElementById('toast');
+      var toastTimer;
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('is-show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('is-show'); }, 2200);
+      }
+
+      /* 3) نسخ رقم الجوال: Clipboard API مع بديل للملفات المحلية (file://) */
+      function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text).then(function () { return true; })
+            .catch(function () { return legacyCopy(text); });
+        }
+        return Promise.resolve(legacyCopy(text));
+      }
+      function legacyCopy(text) {
+        var area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        var done = false;
+        try { done = document.execCommand('copy'); } catch (error) { done = false; }
+        document.body.removeChild(area);
+        return done;
+      }
+
+      document.querySelectorAll('[data-copy]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          copyText(button.getAttribute('data-copy')).then(function (ok) {
+            if (ok) {
+              showToast('تم نسخ رقم الجوال بنجاح');
+              var label = button.querySelector('.btn__label');
+              if (label) {
+                var original = label.textContent;
+                label.textContent = 'تم النسخ ✓';
+                setTimeout(function () { label.textContent = original; }, 1800);
+              }
+            } else {
+              showToast('تعذّر النسخ، يمكنك تحديد الرقم يدوياً');
+            }
+          });
+        });
+      });
+
+      /* 4) زر الطباعة / حفظ PDF */
+      document.querySelectorAll('.js-print').forEach(function (button) {
+        button.addEventListener('click', function () { window.print(); });
+      });
+    })();
+  </script>
+</body>
+</html>
